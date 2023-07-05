@@ -11,7 +11,7 @@ num_trucks = len(capacities)
 num_items = len(weights)
 
 # 変数の作成
-x = addbinvars(num_items, num_trucks, cat="Binary")  # 荷物をトラックに割り当てる変数
+x = addbinvars(num_items, num_trucks)  # 荷物をトラックに割り当てる変数
 
 # 目的関数
 problem += lpSum(weights[i] * x[i][j] for i in range(num_items) for j in range(num_trucks))
